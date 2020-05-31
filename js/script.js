@@ -7,7 +7,8 @@ let navbar          = document.querySelectorAll('.header li'),
     receptionExit   = document.querySelector('.exit'),
     tagline         = document.querySelector('.head > h1'),
     orderButton     = document.querySelector('.reception > div > button')
-    messageBox      = document.querySelector('.message');
+    messageBox      = document.querySelector('.message'),
+    upper           = document.querySelector('.upper');
 
 
 // start tagline animation
@@ -101,6 +102,13 @@ orderButton.addEventListener('click', () => {
 })
 
 
+upper.addEventListener('click', () => {
+    document.querySelector('.head').scrollIntoView({
+        behavior: 'smooth'
+    })
+})
+
+
 // lazy load function
 window.addEventListener('scroll', () => {
     lazy.forEach(elem => {
@@ -110,4 +118,16 @@ window.addEventListener('scroll', () => {
             }
         }
     })
+
+    // transition upper button
+    if (this.pageYOffset > document.documentElement.clientHeight) {
+        if (!upper.classList.contains('active')) {
+            upper.classList.add('active')
+        }
+    }
+    else {
+        if (upper.classList.contains('active')) {
+            upper.classList.remove('active')
+        }
+    }
 })

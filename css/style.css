@@ -642,6 +642,58 @@ body {
     pointer-events: all;
 }
 
+.upper {
+    position: fixed;
+    width: 3vw;
+    height: 2.5vw;
+    bottom: 4vw;
+    right: 4vw;
+    transition: opacity .6s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.upper:hover {
+    cursor: pointer;
+}
+
+.upper:hover > div > div {
+    background-color: #c69458;
+}
+
+.upper.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.upper > div {
+    display: flex;
+    justify-content: center;
+    height: 50%;
+}
+
+.upper > div:nth-child(1) {
+    padding-top: 2vh;
+}
+
+.upper > div > div {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #fff;
+    transition: background-color .2s;
+}
+
+.upper > div > div:nth-child(1) {
+    transform: rotate(45deg);
+    left: 43%;
+}
+
+.upper > div > div:nth-child(2) {
+    transform: rotate(-45deg);
+    right: 43%;
+}
+
 .lazy {
     position: relative;
     top: 40px;
