@@ -10,10 +10,12 @@ let navbar          = document.querySelectorAll('.header li'),
     messageBox      = document.querySelector('.message');
 
 
+// start tagline animation
 tagline.classList.add('l-active');
 receptionButton.classList.add('l-active');
 
 
+// navbar action
 navbar[0].addEventListener('click', () => {
     document.querySelector('.about').scrollIntoView({
         behavior: 'smooth'
@@ -45,6 +47,7 @@ navbar[4].addEventListener('click', () => {
 })
 
 
+// transtion to social network
 contactbar[0].addEventListener('click', () => {
     window.open('https://ru-ru.facebook.com/');
 })
@@ -63,6 +66,7 @@ receptionButton.addEventListener('click', () => {
 })
 
 
+// check input to fill
 receptionInput.forEach(input => {
     input.addEventListener('change', () => {
         if (input.value != '') {
@@ -75,11 +79,13 @@ receptionInput.forEach(input => {
 })
 
 
+// logic exit button exit of reception block
 receptionExit.addEventListener('click', () => {
     receptionBlock.classList.remove('active');
 })
 
 
+// logic message box
 orderButton.addEventListener('click', () => {
     messageBox.innerHTML = 'Заявка отправлена'
     for (i = 0; i < 3; i++) {
@@ -95,6 +101,7 @@ orderButton.addEventListener('click', () => {
 })
 
 
+// lazy load function
 window.addEventListener('scroll', () => {
     lazy.forEach(elem => {
         if (!elem.classList.contains('l-active')) {
