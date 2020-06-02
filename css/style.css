@@ -39,8 +39,7 @@ body {
     background: linear-gradient(to right, rgba(5, 5, 5, .6), rgba(21, 21, 21, .6));
 }
 
-.header > h3 {
-    cursor: pointer;
+.header > span {
     font-size: 7.2vh;
     font-family: Logo;
     margin: 0 40px;
